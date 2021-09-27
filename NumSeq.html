@@ -6,10 +6,9 @@ Started 2021-09-27
 <html>
 	<head>
 		<title>NumSeq</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../css/topnav.css">
 		<link rel="stylesheet" href="css/numseq.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="js/numseq.js"></script>
 	</head>
 
 	<body>
@@ -21,7 +20,11 @@ Started 2021-09-27
 		
 		<div class="main">
 			<div>4 digits</div>
-			<div>3 buttons</div>
+			<div>
+				<a> Button - </a>
+				<a id="button_start_stop" onclick="button_start_stop()"> Button Start/Stop </a>
+				<a> Button + </a>
+			</div>
 			<div>number sequence/checked result</div>
 		</div>
 
