@@ -19,13 +19,23 @@ Started 2021-09-27
 		</div>
 		
 		<div class="main">
-			<div>4 digits</div>
 			<div>
 				<a> Button - </a>
 				<a id="button_start_stop" onclick="button_start_stop()"> Button Start/Stop </a>
 				<a> Button + </a>
 			</div>
-			<div id="number_sequence">number sequence/checked result</div>
+			<form onsubmit="check_number_sequence();return false">
+				<label for="number_sequence_label">Type in the number sequence</label><br>
+				<input type="text" id="number_sequence_input" value=""><br>
+			</form>
+			<a id="correct_number_sequence"> XXXX </a>
+			<form onchange="show_number_of_digits();return false">
+			<div>
+				<input type="checkbox" id="number_of_digits_checkbox">
+				<label for="number_of_digits_label">Show number of digits:</label>
+				<a id="number_of_digits"> X </a>
+			</div><br>
+			</form>
 		</div>
 
 	</body>

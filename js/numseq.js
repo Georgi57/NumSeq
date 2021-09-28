@@ -9,6 +9,7 @@ var running = false;
 var number_sequence = "";
 var number_sequence_length = 4;
 var number_sequence_index = 0;
+var number_of_digits_tickbox = document.querySelector('input[id="number_of_digits"]');
 
 // Initialize new SpeechSynthesisUtterance object
 let speech = new SpeechSynthesisUtterance();
@@ -55,5 +56,17 @@ function generate_number_sequence() {
 	for (let i = 0; i < number_sequence_length; i++) {
 		number_sequence = number_sequence + Math.floor(Math.random() * 10);
 	}
-	document.getElementById("number_sequence").innerHTML = number_sequence;
+	document.getElementById("correct_number_sequence").innerHTML = number_sequence;
+}
+
+function show_number_of_digits() {
+	if (document.getElementById("number_of_digits_checkbox").checked) {
+		document.getElementById("number_of_digits").innerHTML = number_sequence_length;
+	} else {
+		document.getElementById("number_of_digits").innerHTML = "X";
+	}
+}
+
+function check_number_sequence() {
+	console.log('Checking number sequence');
 }
