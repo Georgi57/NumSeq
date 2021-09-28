@@ -6,6 +6,7 @@ Started 2021-09-27
 <html lang="en">
 	<head>
 		<title>NumSeq</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../css/topnav.css">
 		<link rel="stylesheet" href="css/numseq.css">
 		<script src="js/numseq.js"></script>
@@ -18,25 +19,27 @@ Started 2021-09-27
 			<a class="active">NumSeq</a>
 		</div>
 		
-		<div class="main">
+		<h2>
 			<div>
-				<a> Button - </a>
-				<a id="button_start_stop" onclick="button_start_stop()"> Button Start/Stop </a>
-				<a> Button + </a>
+				<form onsubmit="check_number_sequence();return false">
+					<label id="number_sequence_label">Type in the number sequence</label><br>
+					<input type="text" id="number_sequence_input" autofocus>
+				</form>
 			</div>
-			<form onsubmit="check_number_sequence();return false">
-				<label for="number_sequence_label">Type in the number sequence</label><br>
-				<input type="text" id="number_sequence_input" value=""><br>
-			</form>
-			<a id="correct_number_sequence"> XXXX </a>
+			<div id="numseq_control">
+				<a id="button_start_stop" onclick="button_start_stop()"> Button Start/Stop </a>
+				<a id="correct_number_sequence"> XXXX </a>
+			</div>
+		</h2>
+		<h4>
 			<form onchange="show_number_of_digits();return false">
 			<div>
 				<input type="checkbox" id="number_of_digits_checkbox">
 				<label for="number_of_digits_label">Show number of digits:</label>
 				<a id="number_of_digits"> X </a>
-			</div><br>
+			</div>
 			</form>
-		</div>
+		</h4>
 
 	</body>
 </html>

@@ -3,11 +3,20 @@ Written by Georgi Olentsenko for NumSeq project
 Started 2021-09-27
 */
 
-.main {
-  float: left;
-  text-align: center;
-  padding: 10px 10px;
-  text-decoration: none;
-  font-size: 17px;
-  display: inline-block;
+h2, h4 {
+  margin: 10px;
+}
+
+#numseq_control {
+	margin-top: 10px;
+}
+
+/* Change the color of links on hover */
+#button_start_stop:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+input {
+  font-size: 100%;
 }
