@@ -11,10 +11,21 @@ h2, h4 {
 	margin-top: 10px;
 }
 
+/* Button config */
+#button_start_stop {
+    background-color: #4CAF50;
+    color: black;
+	padding: 5px 10px;
+	border-radius: 8px;
+	width: 100px;
+	display: inline-block;
+	text-align: center;
+}
+
 /* Change the color of links on hover */
 #button_start_stop:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: #ffaa00;
+    color: white;
 }
 
 input {
