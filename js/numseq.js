@@ -4,7 +4,6 @@ Started 2021-09-27
 */
 
 // State of the app
-var running = false;
 var check_sequence = false;
 var congratulate = false;
 
@@ -17,20 +16,6 @@ var number_of_digits_tickbox = document.querySelector('input[id="number_of_digit
 let speech = new SpeechSynthesisUtterance();
 var speaking = false;
 var speech_length = 0;
-
-function button_start_stop()
-{
-	if (running) {
-		running = false;
-		document.getElementById("button_start_stop").innerHTML = "Start";
-	}
-	else {
-		running = true;
-		document.getElementById("button_start_stop").innerHTML = "Stop";
-		
-		generate_number_sequence();
-	}
-}
 
 // Generate a new number sequence for the memory training
 function generate_number_sequence() {
@@ -104,11 +89,14 @@ function check_number_sequence() {
 				'<a style="background-color: #ff3333">'+number_sequence[i]+'</a>';
 			}
 		}
+		document.getElementById("button_start_stop").innerHTML = "Listen";
 		check_sequence = false;
 	} else {
+		// Clear form input
+		document.getElementById("number_sequence_input").value = "";
+		document.getElementById("correct_number_sequence").innerHTML = "";
+		document.getElementById("button_start_stop").innerHTML = "Check";
 		// Start anew if sequence is already checked or none there
 		generate_number_sequence();
-		// Clear form input
-		number_sequence_input = document.getElementById("number_sequence_input").value = "";
 	}
 }
