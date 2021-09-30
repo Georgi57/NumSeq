@@ -61,9 +61,9 @@ function settings() {
 	}
 	
 	// Set number of digits if it is different
-	if (document.getElementById("number_of_digits_input").value != "X" &&
+	if (document.getElementById("number_of_digits_input").value != "X" ||
 		document.getElementById("number_of_digits_input").value != numseq_length) {
-		numseq_length = document.getElementById("number_of_digits_input").value;
+		numseq_length = Number(document.getElementById("number_of_digits_input").value);
 	}
 	
 	// Set whether to see or not the number of digits
@@ -118,10 +118,12 @@ function check_numseq() {
 				speech.text = "Well done!";
 				window.speechSynthesis.speak(speech);
 			}
-		}
-		// Increment sequence length if set to do so
-		if (success) {
-			numseq_length += 1;
+			// Increment sequence length if set to do so
+			if (inc_len) {
+				console.log(numseq_length);
+				numseq_length = Number(numseq_length) + 1;
+				console.log(numseq_length);
+			}
 		}
 		document.getElementById("btn_ctrl").innerHTML = "Listen";
 		check_seq = false;
