@@ -5,6 +5,7 @@ Started 2021-09-27
 
 // State of the app
 var check_seq = false;
+var reverse_check = false;
 var congratulate = false;
 var inc_len = true;
 
@@ -52,6 +53,13 @@ speech.addEventListener('end', function(event) {
 
 // Manages the settings checkboxes
 function settings() {
+	// Set whether to increment sequence length on success
+	if (document.getElementById("reverse").checked) {
+		reverse_check = true;
+	} else {
+		reverse_check = false;
+	}
+	
 	// Set number of digits if it is different
 	if (document.getElementById("number_of_digits_input").value != "X" &&
 		document.getElementById("number_of_digits_input").value != numseq_length) {
@@ -91,12 +99,14 @@ function check_numseq() {
 		// Show differences in sequence if any
 		document.getElementById('correct_numseq').innerHTML = '';
 		for (var i = 0; i < numseq_length; i++) {
-			if (numseq[i]==numseq_input[i]) {
-			document.getElementById('correct_numseq').innerHTML +=
-				'<a style="background-color: #98e698">'+numseq[i]+'</a>';
+			var j = i;
+			if (reverse_check) j = numseq_length - i - 1;
+			if (numseq[i]==numseq_input[j]) {
+				document.getElementById('correct_numseq').innerHTML +=
+					'<a style="background-color: #98e698">'+numseq[i]+'</a>';
 			} else {
 				document.getElementById('correct_numseq').innerHTML +=
-				'<a style="background-color: #ff3333">'+numseq[i]+'</a>';
+					'<a style="background-color: #ff3333">'+numseq[i]+'</a>';
 			}
 		}
 		// Compare the generated and input sequence

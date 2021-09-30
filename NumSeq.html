@@ -34,17 +34,21 @@ Started 2021-09-27
 		<h4>
 			<form onchange="settings();return false" onsubmit="settings();return false">
 			<div>
+				<input type="checkbox" id="reverse">
+				<label for="reverse_label">Check sequence in reverse</label>
+			</div>
+			<div>
 				<input type="checkbox" id="number_of_digits_checkbox">
 				<label for="number_of_digits_label">Show number of digits:</label>
 				<input type="text" id="number_of_digits_input" value="X">
 			</div>
 			<div>
-				<input type="checkbox" id="congratulate">
-				<label for="congratulate_label">Congratulate on success</label>
-			</div>
-			<div>
 				<input type="checkbox" id="inc_len" checked>
 				<label for="inc_len_label">Increment sequence length on success</label>
+			</div>
+			<div>
+				<input type="checkbox" id="congratulate">
+				<label for="congratulate_label">Congratulate on success</label>
 			</div>
 			</form>
 		</h4>
