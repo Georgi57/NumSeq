@@ -98,6 +98,7 @@ function check_numseq() {
 		console.log(numseq + " vs " + numseq_input + " (last one yours)");
 		// Show differences in sequence if any
 		document.getElementById('correct_numseq').innerHTML = '';
+		var success = true;
 		for (var i = 0; i < numseq_length; i++) {
 			var j = i;
 			if (reverse_check) j = numseq_length - i - 1;
@@ -107,18 +108,19 @@ function check_numseq() {
 			} else {
 				document.getElementById('correct_numseq').innerHTML +=
 					'<a style="background-color: #ff3333">'+numseq[i]+'</a>';
+				success = false;
 			}
-		}
-		// Compare the generated and input sequence
-		if (numseq == numseq_input) {
-			console.log('Correct sequence!');
-			if (congratulate) {
-				speech.text = "Well done!";
-				window.speechSynthesis.speak(speech);
-			}
-			// Increment sequence length if set to do so
-			if (inc_len) {
-				numseq_length += 1;
+			// If the input is correct
+			if (success) {
+				console.log('Correct sequence!');
+				if (congratulate) {
+					speech.text = "Well done!";
+					window.speechSynthesis.speak(speech);
+				}
+				// Increment sequence length if set to do so
+				if (inc_len) {
+					numseq_length += 1;
+				}
 			}
 		}
 		document.getElementById("btn_ctrl").innerHTML = "Listen";
