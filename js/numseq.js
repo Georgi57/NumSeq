@@ -28,7 +28,7 @@ function generate_numseq() {
 	speech_length = 0;
 	numseq_index = 0;
 	if (document.getElementById("number_of_digits_checkbox").checked) {
-		document.getElementById("number_of_digits").innerHTML = numseq_length;
+		document.getElementById("number_of_digits_input").value = numseq_length;
 	}
 	speech.text = numseq[numseq_index];
 	speaking = true;
@@ -52,11 +52,17 @@ speech.addEventListener('end', function(event) {
 
 // Manages the settings checkboxes
 function settings() {
-	//  Set whether to see or not the number of digits
+	// Set number of digits if it is different
+	if (document.getElementById("number_of_digits_input").value != "X" &&
+		document.getElementById("number_of_digits_input").value != numseq_length) {
+		numseq_length = document.getElementById("number_of_digits_input").value;
+	}
+	
+	// Set whether to see or not the number of digits
 	if (document.getElementById("number_of_digits_checkbox").checked) {
-		document.getElementById("number_of_digits").innerHTML = numseq_length;
+		document.getElementById("number_of_digits_input").value = numseq_length;
 	} else {
-		document.getElementById("number_of_digits").innerHTML = "X";
+		document.getElementById("number_of_digits_input").value = "X";
 	}
 	
 	// Set whether to congratulate you if you enter the sequence correctly
@@ -72,6 +78,7 @@ function settings() {
 	} else {
 		inc_len = false;
 	}
+	return false;
 }
 
 // Function to check the sequence you enter

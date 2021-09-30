@@ -32,11 +32,11 @@ Started 2021-09-27
 			</div>
 		</h2>
 		<h4>
-			<form onchange="settings();return false">
+			<form onchange="settings();return false" onsubmit="settings();return false">
 			<div>
 				<input type="checkbox" id="number_of_digits_checkbox">
 				<label for="number_of_digits_label">Show number of digits:</label>
-				<a id="number_of_digits"> X </a>
+				<input type="text" id="number_of_digits_input" value="X">
 			</div>
 			<div>
 				<input type="checkbox" id="congratulate">

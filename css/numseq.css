@@ -28,6 +28,10 @@ h2, h4 {
     color: white;
 }
 
-input {
+#numseq_input {
   font-size: 100%;
+}
+
+#number_of_digits_input {
+  width: 20px;
 }
