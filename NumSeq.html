@@ -21,14 +21,14 @@ Started 2021-09-27
 		
 		<h2>
 			<div>
-				<form onsubmit="check_number_sequence();return false">
-					<label id="number_sequence_label">Type in the numbers you hear</label><br>
-					<input type="text" id="number_sequence_input" autofocus>
+				<form onsubmit="check_numseq();return false">
+					<label id="numseq_label">Type in the numbers you hear</label><br>
+					<input type="text" id="numseq_input" autofocus>
 				</form>
 			</div>
-			<div id="numseq_control">
-				<a id="button_start_stop" onclick="check_number_sequence()"> Listen </a>
-				<a id="correct_number_sequence"></a>
+			<div id="numseq_ctrl">
+				<a id="btn_ctrl" onclick="check_numseq()"> Listen </a>
+				<a id="correct_numseq"></a>
 			</div>
 		</h2>
 		<h4>
@@ -43,8 +43,8 @@ Started 2021-09-27
 				<label for="congratulate_label">Congratulate on success</label>
 			</div>
 			<div>
-				<input type="checkbox" id="increment_length" checked>
-				<label for="increment_lengthlabel">Increment sequence length on success</label>
+				<input type="checkbox" id="inc_len" checked>
+				<label for="inc_len_label">Increment sequence length on success</label>
 			</div>
 			</form>
 		</h4>
