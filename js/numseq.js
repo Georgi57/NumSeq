@@ -110,18 +110,18 @@ function check_numseq() {
 					'<a style="background-color: #ff3333">'+numseq[i]+'</a>';
 				success = false;
 			}
-			// If the input is correct
-			if (success) {
-				console.log('Correct sequence!');
-				if (congratulate) {
-					speech.text = "Well done!";
-					window.speechSynthesis.speak(speech);
-				}
-				// Increment sequence length if set to do so
-				if (inc_len) {
-					numseq_length += 1;
-				}
+		}
+		// If the input is correct
+		if (success) {
+			console.log('Correct sequence!');
+			if (congratulate) {
+				speech.text = "Well done!";
+				window.speechSynthesis.speak(speech);
 			}
+		}
+		// Increment sequence length if set to do so
+		if (success) {
+			numseq_length += 1;
 		}
 		document.getElementById("btn_ctrl").innerHTML = "Listen";
 		check_seq = false;
