@@ -6,7 +6,7 @@ Started 2021-09-27
 // State of the app
 var check_seq = false;
 var reverse_check = false;
-var congratulate = false;
+var congratulate = true;
 var inc_len = true;
 
 var numseq = "";
@@ -61,9 +61,11 @@ function settings() {
 	}
 	
 	// Set number of digits if it is different
-	if (document.getElementById("number_of_digits_input").value != "X" ||
+	if (document.getElementById("number_of_digits_input").value != "X" &&
 		document.getElementById("number_of_digits_input").value != numseq_length) {
-		numseq_length = Number(document.getElementById("number_of_digits_input").value);
+			
+		var field = Number(document.getElementById("number_of_digits_input").value);
+		if (field != NaN) numseq_length = field;
 	}
 	
 	// Set whether to see or not the number of digits
@@ -120,9 +122,7 @@ function check_numseq() {
 			}
 			// Increment sequence length if set to do so
 			if (inc_len) {
-				console.log(numseq_length);
-				numseq_length = Number(numseq_length) + 1;
-				console.log(numseq_length);
+				numseq_length += 1;
 			}
 		}
 		document.getElementById("btn_ctrl").innerHTML = "Listen";
